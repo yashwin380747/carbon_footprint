@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Footprint Calculator</h1>
+        <label for="vehicle">Enter vehicle of your choice:</label>
+        <select id="vehicle" onchange="showInputs()">
+            <option value="">Select...</option>
+            <option value="car">Car</option>
+            <option value="two-wheeler">Two Wheeler</option>
+            <option value="aircraft">Aircraft</option>
+        </select>
+
+        <div id="inputs" style="display: none;">
+            <div id="car-inputs" style="display: none;">
+                <label for="distance">Enter the distance travelled (km):</label>
+                <input type="number" id="distance" required>
+                <label for="fuel">Enter the fuel type:</label>
+                <select id="fuel">
+                    <option value="diesel">Diesel</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="other">Other</option>
+                </select>
+                <button onclick="calculateCarFootprint()">Calculate</button>
+            </div>
+
+            <div id="two-wheeler-inputs" style="display: none;">
+                <label for="distance2">Enter the distance travelled (km):</label>
+                <input type="number" id="distance2" required>
+                <label for="engine">Enter the cubic capacity (cc):</label>
+                <input type="number" id="engine" required>
+                <button onclick="calculateTwoWheelerFootprint()">Calculate</button>
+            </div>
+
+            <div id="aircraft-inputs" style="display: none;">
+                <label for="place">Enter the place name:</label>
+                <input type="text" id="place" required>
+                <button onclick="calculateAircraftFootprint()">Calculate</button>
+            </div>
+        </div>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
